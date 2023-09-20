@@ -1,6 +1,6 @@
 from gymnasium import register
 from minigrid.core.world_object import Lava, Wall
-from minigrid.envs import CrossingEnv, DynamicObstaclesEnv, MultiRoomEnv
+from minigrid.envs import CrossingEnv, DynamicObstaclesEnv, MultiRoomEnv, UnlockEnv
 
 from src.ppo.my_probe_envs import (
     Probe1,
@@ -38,6 +38,13 @@ def get_dynamic_obstacles_multi_env(render_mode="rgb_array", max_steps=1000):
 
     return MultiEnvSampler(envs)
 
+def get_UnlockEnvv(render_mode="rgb_array", max_steps=1000):
+    envs = []
+    env = UnlockEnv(
+        render_mode=render_mode,
+    )
+    envs.append(env)
+    return MultiEnvSampler(envs)
 
 def get_crossing_multi_env(render_mode="rgb_array", max_steps=1000):
     envs = []
