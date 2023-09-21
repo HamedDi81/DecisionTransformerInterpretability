@@ -942,6 +942,7 @@ def load_saved_checkpoint(path, num_envs=10) -> PPOAgent:
     # remove environment config from the model config
     if "environment_config" in other_args:
         del other_args["environment_config"]
+    print(f"other_args is {other_args}")
 
     # get the online config
     online_config_args = json.loads(saved_state["online_config"])
@@ -957,10 +958,12 @@ def load_saved_checkpoint(path, num_envs=10) -> PPOAgent:
         model_config = TransformerModelConfig(**other_args)
     elif "use_memory" in other_args:
         model_config = LSTMModelConfig(environment_config, **other_args)
+        print(model_config)
+        #Hamed's Comment -> other_arg is {"hidden_dim": 64}
 
     # create the model
     agent = get_agent(
-        model_config=model_config,
+        model_config=None,
         envs=envs,
         environment_config=environment_config,
         online_config=online_config,
@@ -968,6 +971,7 @@ def load_saved_checkpoint(path, num_envs=10) -> PPOAgent:
 
     # load the model state from the checkpoint
     agent.load_state_dict(saved_state["model_state_dict"])
+    print("SUCCCCCCCCSED")
 
     # return the model
     return agent

@@ -16,6 +16,7 @@ def runner(
 ):
     register_envs()
     agent = load_saved_checkpoint(checkpoint_path, num_envs)
+    print("This is model config",agent.model_config)
     memory = Memory(
         agent.envs, OnlineTrainConfig(num_envs=num_envs), device=agent.device
     )
@@ -25,7 +26,7 @@ def runner(
         run_config=RunConfig(track=False),
         environment_config=agent.environment_config,
         online_config=OnlineTrainConfig(num_envs=num_envs),
-        model_config=agent.model_config,
+        model_config=None,
     )
 
     i = 0
