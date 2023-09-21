@@ -3,7 +3,6 @@ from src.config import (
     EnvironmentConfig,
     OnlineTrainConfig,
     RunConfig,
-    TransformerModelConfig,
 )
 from src.ppo.runner import ppo_runner
 from src.ppo.utils import parse_args
