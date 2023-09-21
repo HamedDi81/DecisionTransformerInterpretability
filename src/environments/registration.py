@@ -136,6 +136,11 @@ def register_envs():
         entry_point="environments.registration:get_multi_room_env",
     )
 
+    register(
+        id="Unlock-v0"
+    )
+    
+
     probes = [Probe1, Probe2, Probe3, Probe4, Probe5, Probe6]
     for i in range(6):
         register(id=f"Probe{i+1}-v0", entry_point=probes[i])
