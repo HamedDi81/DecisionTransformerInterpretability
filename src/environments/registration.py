@@ -137,7 +137,8 @@ def register_envs():
     )
 
     register(
-        id="Unlock-v0"
+        id="Unlock-v0",
+        entry_point='gym_minigrid.envs:Unlock'
     )
     
 

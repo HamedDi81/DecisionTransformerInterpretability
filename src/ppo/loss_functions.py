@@ -4,7 +4,7 @@ from torchtyping import TensorType as TT
 from torchtyping import patch_typeguard
 from typeguard import typechecked
 
-patch_typeguard()
+# patch_typeguard()
 
 
 def calc_clipped_surrogate_objective(
