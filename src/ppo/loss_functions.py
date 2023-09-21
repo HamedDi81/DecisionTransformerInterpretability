@@ -47,7 +47,7 @@ def calc_clipped_surrogate_objective(
 
 @typechecked
 def calc_value_function_loss(
-    values: TT["batch"], mb_returns: TT["batch"], vf_coef: float  # noqa: F821
+    values , mb_returns, vf_coef: float  # noqa: F821
 ) -> t.Tensor:
     """
     Compute the value function portion of the loss function.
