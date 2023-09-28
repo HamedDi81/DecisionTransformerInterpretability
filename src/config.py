@@ -26,7 +26,7 @@ class EnvironmentConfig:
     Configuration class for the environment.
     """
 
-    env_id: str = "MiniGrid-Dynamic-Obstacles-8x8-v0"
+    env_id: str = "MiniGrid-Unlock-v0"
     one_hot_obs: bool = False
     img_obs: bool = False
     fully_observed: bool = False
